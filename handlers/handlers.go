@@ -14,7 +14,8 @@ type PageData struct {
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
-		NotFoundHandler(w, r)
+		http.Error(w, "404 Page Not Found", http.StatusNotFound)
+		log.Println("Resource not found")
 		return
 	}
 
@@ -77,9 +78,4 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 	default:
 		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
 	}
-}
-
-func NotFoundHandler(w http.ResponseWriter, r *http.Request) {
-	log.Println("404 Not Found: Resource not found")
-	http.Error(w, "404 Not Found", http.StatusNotFound)
 }

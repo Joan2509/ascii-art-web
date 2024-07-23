@@ -16,9 +16,9 @@ func MapCreator(s string) map[rune][]string {
 	} else {
 		lines = strings.Split(s, "\n")
 	}
-	for i := 0; i < len(lines); i++ {
+	for i := 0; i < len(lines)-1; i++ {
 		// If the current line is empty and there are lines left to process
-		if i+1 < len(lines) && lines[i] == "" {
+		if lines[i] == "" {
 			artLines := []string{}
 			for j := 0; j < 8; j++ {
 				artLines = append(artLines, lines[i+1+j])

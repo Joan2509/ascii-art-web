@@ -4,7 +4,7 @@ body {
 
 .result {
     text-align: center;
-    background-color: #e7f0fd;
+    background-color: red;
     padding: 40px 40px;
     margin: 50px auto;
     max-width: 1000px;

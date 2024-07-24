@@ -1,0 +1,30 @@
+body {
+    background-image: url(image.png)
+}
+
+.result {
+    text-align: center;
+    background-color: #e7f0fd;
+    padding: 40px 40px;
+    margin: 50px auto;
+    max-width: 1000px;
+    overflow: scroll;
+    border-radius: 10px;
+    text-justify: center;
+}
+
+.text-bar {
+    background-color: #e7f0fd;
+    padding: 40px 40px;
+    margin: 30px auto;
+    max-width: 1000px;
+
+}
+
+h1 {
+    text-align: center;
+    text-justify: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: red;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}

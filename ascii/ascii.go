@@ -4,7 +4,7 @@ import "fmt"
 
 func Ascii(text, banner string) (string, string, string, string, string, string, string, string) {
 	var a, b, c, d, e, f, g, h []int = Calculator(text)
-	ab, bc, cd, de, ef, fg, gh, hi := Concatenator(a, b, c, d, e, f, g, h)
+	ab, bc, cd, de, ef, fg, gh, hi := Concatenator(a, b, c, d, e, f, g, h, banner)
 	return ab, bc, cd, de, ef, fg, gh, hi
 }
 

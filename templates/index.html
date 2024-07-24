@@ -4,34 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" aria-hidden="true"></i>" content="30">
-    <title>ASCII Art Generator</title>
+    <meta http-equiv="refresh" content="30">
+    <link rel="stylesheet" href="styles.css">
+    <title>ASCII Art</title>
 </head>
 
 <body>
-    <h1>ASCII Art Generator</h1>
-    <form action="/ascii-art" method="POST">
-        <label for="text">Enter Text:</label>
-        <input type="text" id="text" name="text" required><br><br>
+    <div class="main">
 
-        <label>Choose Banner:</label><br>
-        <input type="radio" id="banner-shadow" name="banner" value="shadow" checked>
-        <label for="banner-shadow">Shadow</label><br>
-
-        <input type="radio" id="banner-standard" name="banner" value="standard">
-        <label for="banner-standard">Standard</label><br>
-
-        <input type="radio" id="banner-thinkertoy" name="banner" value="thinkertoy">
-        <label for="banner-thinkertoy">Thinkertoy</label><br><br>
-
-        <button type="submit">Generate ASCII Art</button>
-    </form>
+        <h1>ASCII Art Web</h1>
+        <form action="/ascii-art" method="POST">
+            <label class="test-bar" for="text">Enter Text:</label><br>
+            <textarea id="message" name="message" rows="5" cols="30" required></textarea>
+            <div class="banner-files">
+                <label>Choose Banner:</label><br>
+                <input type="radio" id="banner-shadow" name="banner" value="shadow">
+                <label for="banner-shadow">Shadow</label>
+                <input type="radio" id="banner-standard" name="banner" value="standard" checked>
+                <label for="banner-standard">Standard</label>
+                <input type="radio" id="banner-thinkertoy" name="banner" value="thinkertoy">
+                <label for="banner-thinkertoy">Thinkertoy</label><br><br>
+            </div>
+            <button type="submit">Generate ASCII Art</button>
+        </form>
+    </div>
 
     <div>
         {{ if .Result }}
         <h2>ASCII Art Result:</h2>
-        <div id="result"
-            style="text-align: center; background-color:#e7f0fd; padding:40px 40px; margin:50px auto; max-width:1000px; overflow: auto; border-radius: 10px;">
+        <div id="result">
             <pre>{{ .Result }}</pre>
             {{ end }}
 

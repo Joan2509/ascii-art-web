@@ -13,8 +13,9 @@ each character line contents are concatenated into a single string
 the new string is returned as a line.
 */
 
-func Maps(n int) string {
-	file, err := os.Open("standard.txt")
+func Maps(n int, banner string) string {
+
+	file, err := os.Open(fmt.Sprintf("%s.txt", banner))
 	if err != nil {
 		fmt.Println(err)
 	}

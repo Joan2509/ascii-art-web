@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" aria-hidden="true"></i>" content="30">
+    <title>ASCII Art Generator</title>
+</head>
+
+<body>
+    <h1>ASCII Art Generator</h1>
+    <form action="/ascii-art" method="POST">
+        <label for="text">Enter Text:</label>
+        <input type="text" id="text" name="text" required><br><br>
+
+        <label>Choose Banner:</label><br>
+        <input type="radio" id="banner-shadow" name="banner" value="shadow" checked>
+        <label for="banner-shadow">Shadow</label><br>
+
+        <input type="radio" id="banner-standard" name="banner" value="standard">
+        <label for="banner-standard">Standard</label><br>
+
+        <input type="radio" id="banner-thinkertoy" name="banner" value="thinkertoy">
+        <label for="banner-thinkertoy">Thinkertoy</label><br><br>
+
+        <button type="submit">Generate ASCII Art</button>
+    </form>
+
+    <div>
+        {{ if .Result }}
+        <h2>ASCII Art Result:</h2>
+        <div id="result"
+            style="text-align: center; background-color:#e7f0fd; padding:40px 40px; margin:50px auto; max-width:1000px; overflow: auto; border-radius: 10px;">
+            <pre>{{ .Result }}</pre>
+            {{ end }}
+
+            {{ if .Error }}
+            <h3>Error:</h3>
+            <p>{{ .Error }}</p>
+            {{ end }}
+        </div>
+</body>
+
+</html>

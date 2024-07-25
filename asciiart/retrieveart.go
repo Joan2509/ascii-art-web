@@ -1,6 +1,7 @@
 package asciiart
 
 import (
+	"fmt"
 	"strings"
 )
 
@@ -23,6 +24,9 @@ func ArtRetriever(s string, m map[rune][]string) (string, error) {
 					if asciiArt, ok := m[char]; ok {
 						// Add the corresponding ASCII art for the character
 						result.WriteString(asciiArt[j])
+					} else {
+						// For cases of non-ascii characters
+						return "400", fmt.Errorf("error! invalid input: %s", string(char))
 					}
 				}
 				result.WriteString("\n")

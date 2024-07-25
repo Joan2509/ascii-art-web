@@ -4,16 +4,15 @@ package asciiart
 // and prints the corresponding ASCII art to the console.
 func Art(inputText, banner string) (string, error) {
 	bannerFile, err := ReadBannerFile("banners/" + banner + ".txt")
+	// check(err)
 	if err != nil {
 		return "404", err
 	}
-
 	ASCIIArtMap := MapCreator(string(bannerFile))
-
 	asciiArt, err := ArtRetriever(inputText, ASCIIArtMap)
+	// check(err)
 	if err != nil {
 		return "400", err
 	}
-
 	return asciiArt, nil
 }
